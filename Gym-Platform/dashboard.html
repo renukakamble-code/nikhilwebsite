@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Dashboard | Muscle Factory</title>
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo">MUSCLE FACTORY</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="plans.html">Plans</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- ================= DASHBOARD ================= -->
+  <section class="dashboard-section">
+    <div class="dashboard-card">
+      <h1 id="member-name">Welcome</h1>
+
+      <div class="member-details">
+        <p><strong>Membership Plan:</strong> <span id="member-plan">Loading...</span></p>
+        <p><strong>Expiry Date:</strong> <span id="member-expiry">Loading...</span></p>
+        <p><strong>Status:</strong> <span id="member-status">Loading...</span></p>
+      </div>
+
+      <button class="btn secondary-btn" onclick="logoutUser()">Logout</button>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 Muscle Factory Gym. All Rights Reserved.</p>
+    <p class="footer-tagline">Strength • Discipline • Power</p>
+  </footer>
+
+  <!-- Dashboard Script -->
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Login | Muscle Factory</title>
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="logo">MUSCLE FACTORY</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="plans.html">Plans</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
+  </header>
+
+  <!-- ================= LOGIN SECTION ================= -->
+  <section class="login-section">
+    <div class="login-card">
+
+      <h1>Member Login</h1>
+      <p class="login-tagline">Access your strength dashboard</p>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Email Address"
+        autocomplete="email"
+        required
+      />
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        required
+      />
+
+      <!-- Error Message -->
+      <p id="error-message" class="error-message"></p>
+
+      <button class="btn primary-btn" onclick="loginUser()">
+        Login
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2026 Muscle Factory Gym. All Rights Reserved.</p>
+    <p class="footer-tagline">Strength • Discipline • Power</p>
+  </footer>
+
+  <!-- Firebase Auth Logic -->
+  <script type="module" src="js/auth.js"></script>
+
+</body>
+</html>

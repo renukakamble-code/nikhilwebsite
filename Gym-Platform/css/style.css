@@ -1,0 +1,462 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --black: #0b0b0b;
+  --dark-gray: #121212;
+  --gold: #d4af37;
+  --gold-dark: #b8962e;
+  --red: #c1121f;
+  --white: #ffffff;
+  --transition: 0.3s ease-in-out;
+}
+
+/* ================= GLOBAL STYLES ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+/* ================= HEADER ================= */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: var(--dark-gray);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main-header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+.nav a {
+  margin-left: 25px;
+  font-weight: 500;
+  color: var(--white);
+  position: relative;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--gold);
+}
+
+.nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: var(--gold);
+  transition: width var(--transition);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+/* ================= HERO SECTION ================= */
+.hero, .page-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+  padding: 20px;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg') center/cover no-repeat;
+}
+
+.hero h1, .page-hero h1 {
+  font-size: 3rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.hero p, .page-hero p {
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+.hero-buttons {
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  margin: 5px;
+}
+
+.primary-btn {
+  background-color: var(--red);
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background-color: #a00f1a;
+  transform: scale(1.05);
+}
+
+.secondary-btn {
+  background-color: var(--gold);
+  color: var(--black);
+}
+
+.secondary-btn:hover {
+  background-color: var(--gold-dark);
+  transform: scale(1.05);
+}
+
+/* ================= SECTIONS ================= */
+.section, .about-section, .pricing-section, .dashboard-section, .plans-cta-section {
+  padding: 80px 40px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 40px;
+}
+
+/* ================= CARDS ================= */
+.card, .login-card, .dashboard-card, .pricing-card {
+  background-color: var(--dark-gray);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 20px 0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: var(--transition);
+}
+
+.card:hover, .pricing-card:hover, .login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+}
+
+/* ================= PRICING CARDS ================= */
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.pricing-card {
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.pricing-card.featured {
+  border: 2px solid var(--gold);
+}
+
+.pricing-card .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--red);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.pricing-card h3 {
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.pricing-card .price {
+  font-size: 2rem;
+  color: var(--white);
+  margin: 10px 0;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin: 15px 0;
+  color: #ccc;
+}
+
+.pricing-card ul li {
+  padding: 8px 0;
+}
+
+/* ================= LOGIN / DASHBOARD ================= */
+.login-section, .dashboard-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.login-card, .dashboard-card {
+  width: 350px;
+  text-align: center;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.login-card input:focus {
+  box-shadow: 0 0 10px var(--gold);
+}
+
+.error-message {
+  color: var(--red);
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--dark-gray);
+  margin-top: 50px;
+}
+
+.footer p {
+  color: #aaa;
+}
+
+.footer-tagline {
+  margin-top: 5px;
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .pricing-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero h1, .page-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p, .page-hero p {
+    font-size: 1rem;
+  }
+
+  .login-card, .dashboard-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1, .page-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-buttons .btn {
+    width: 80%;
+    padding: 10px 0;
+  }
+}
+/* ================= HERO SECTION ================= */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 90vh;
+  padding: 0 20px;
+  background: url('../images/gym-bg.jpg') center/cover no-repeat;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark transparent overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: var(--gold);
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero .tagline {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #f5f5f5;
+}
+
+/* Buttons */
+.hero-buttons .btn {
+  margin: 0 10px;
+  font-size: 1.1rem;
+  padding: 14px 30px;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero .tagline {
+    font-size: 1.2rem;
+  }
+  .hero-buttons .btn {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero .tagline {
+    font-size: 1rem;
+  }
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+/* ================= TRAINERS SECTION ================= */
+.trainers-section {
+  padding: 80px 40px;
+  background-color: var(--black);
+  text-align: center;
+}
+
+.trainers-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.trainer-card {
+  background-color: var(--dark-gray);
+  width: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.trainer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 45px rgba(212, 175, 55, 0.35);
+}
+
+.trainer-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.trainer-card h3 {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  color: var(--gold);
+}
+
+.trainer-card p {
+  margin: 10px 0 25px;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .trainer-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .trainer-card img {
+    height: 280px;
+  }
+}
+.hero {
+  background: url('gym-hero.jpg') center/cover no-repeat;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.6);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
